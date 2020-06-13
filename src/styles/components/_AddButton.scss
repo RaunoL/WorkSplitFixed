@@ -1,0 +1,19 @@
+.addButton {
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.6em;
+    background-color: $dark-green;
+    color: $white;
+    margin: 20px;
+    transition: 0.3s;
+}
+
+.addButton:hover {
+    padding: 20px;
+    cursor: pointer;
+}
+
+.addButton:focus {
+    outline: 0;
+}

@@ -1,0 +1,17 @@
+@import "./font-awesome/fontawesome.scss";
+@import "./font-awesome/solid.scss";
+@import "./layout.scss";
+@import "./colours.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import "./globals.scss";
+// Components
+@import "./components/AddButton.scss";
+@import "./components/Background";
+@import "./components/Header";
+@import "./components/projectItem";
+@import "./components/Button";
+@import "./components/FocusWrapper";
+@import "./components/NewSplitButton";
+@import "./components/FocusSplit";
+@import "./components/FocusHeader";
+@import "./components/DeleteProject";

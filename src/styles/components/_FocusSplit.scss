@@ -1,0 +1,25 @@
+.split button {
+    width: 90%;
+    margin: 20px 5%;
+    background-color: $green;
+    border: 1px solid $black;
+    color: $white;
+    padding: 10px 0;
+    font-size: 1.5em;
+    transition-duration: 0.3s;
+    border-radius: 5px;
+}
+
+.split button:focus {
+    outline: 0;
+}
+
+.split button:hover {
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 2em;
+}
+
+.complete button {
+    text-decoration: line-through;
+}

@@ -1,0 +1,17 @@
+.header {
+    color: $dark-green;
+    border-bottom: 5px solid $black;
+    display: flex;
+    justify-content: space-around;
+}
+
+.header button {
+    border: none;
+    background-color: $light-green;
+    font-size: 2em;
+    color: $dark-green;
+}
+
+.header button:focus {
+    outline: 0;
+}

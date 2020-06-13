@@ -1,0 +1,28 @@
+.button {
+    padding: 20px 0;
+    width: 90%;
+    margin: 30px 5%;
+    border: none;
+    border-radius: 50px;
+    font-size: 2em;
+    background-color: $green;
+    color: $white;
+    transition: 0.4s;
+}
+
+.button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px $green-opaque;
+    cursor: pointer;
+}
+
+.button:focus {
+    outline: 0;
+}
+
+@media(min-width: 1000px) {
+    .button {
+        margin: 30px 25%;
+        width: 50%;
+    }
+}
