@@ -7,7 +7,9 @@ import "./styles/main.scss";
 import Main from "./views/Main";
 import { AuthProvider } from "./services/firebase/Auth"
 import ProtectedRoute from "./components/ProtectedRoute"
+
 function App() {
+  
   return (
     <AuthProvider>
       <Router>

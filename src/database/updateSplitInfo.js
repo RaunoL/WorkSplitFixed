@@ -1,5 +1,7 @@
 import firebaseApp from "../services/firebase/firebase"
-const updateSplitInfo = async (name, due, id, status, project) => {
+const updateSplitInfo = async (name, due, id, status, project, notes) => {
+    console.log(notes);
+    
     await firebaseApp
         .firestore()
         .collection("projects")
@@ -9,8 +11,8 @@ const updateSplitInfo = async (name, due, id, status, project) => {
         .update({
             due: due,
             name: name,
-            status: status
-
+            status: status,
+            notes: "" + notes
         })
 }
 export default updateSplitInfo

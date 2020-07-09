@@ -15,12 +15,12 @@ const newProject = async (name, due, splits) => {
                 .get()
                 .then((querySnapshot) => {
                     querySnapshot.forEach(function (doc) {
-                        
-                        splits.forEach(element =>
-                            firebaseApp.firestore().collection("projects").doc(doc.id).collection("splits").doc(element.id).set({
+                        splits.forEach((element, index) =>
+                            firebaseApp.firestore().collection("projects").doc(doc.id).collection("splits").doc("split" + index).set({
                                 name : element.name,
                                 due : element.due,
-                                status : element.status
+                                status : element.status,
+                                notes : ""
                             })
                         );
 

@@ -5,13 +5,15 @@ function FocusSplit(props) {
     const { id } = props
     const { status } = props
     const { setCurrentEdit } = props
+    const {notes} = props
 
     const updateSplit = (e) => {
         setCurrentEdit({
             id: e.target.id,
             name: name,
             due: due,
-            status: status
+            status: status,
+            notes: notes
         })
     }
     if (status) {

@@ -7,22 +7,27 @@ function UpdateSplit(props){
     const {setCurrentEdit} = props
     const {status} = props
     const {focusProject} = props
-
+    const {notes} = props
     const [nameState, setNameState] = useState(name)
     const [dueState, setDueState] = useState(due)
     const [statusState, setStatusState] = useState(status)
+    const [splitNotes, setSplitNotes] = useState(notes)
     const saveChanges = (e)=>{
         e.preventDefault()
-        updateSplitInfo(nameState, dueState, splitId, e.target.elements.complete.checked, focusProject)
+        updateSplitInfo(nameState, dueState, splitId, statusState, focusProject, splitNotes)
         setCurrentEdit()
         
     }
     return(
         <form onSubmit={saveChanges}>
-            <input type="text" value={nameState} onChange={(e)=> setNameState(e.target.value)}/>
-            <input type="date" value={dueState} onChange={(e)=> setDueState(e.target.value)}/>
-            
-            <input type={"checkbox"} id={"complete"} checked={statusState} onChange={(e)=>setStatusState(e.target.checked)}/>
+            <input name={"name"} type="text" value={nameState} onChange={(e)=> setNameState(e.target.value)} />
+
+            <input name={"date"} type="date" value={dueState} onChange={(e)=> setDueState(e.target.value)} />
+            <label htmlFor="notes">Notes</label>
+            <textarea name={"notes"} value={splitNotes} onChange={(e)=> setSplitNotes(e.target.value)} />
+
+
+            <input name={"checkBox"} type={"checkbox"} id={"complete"} checked={statusState} onChange={(e)=>setStatusState(e.target.checked)}/>
             <label htmlFor="complete">Mark as complete</label>
             <button className={"button"} type={"submit"}>Save</button>
         </form>

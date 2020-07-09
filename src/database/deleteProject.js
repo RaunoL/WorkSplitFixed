@@ -1,19 +1,28 @@
 import firebaseApp from "../services/firebase/firebase"
 const deleteProject = async (id) => {
-    console.log(id)
     await firebaseApp
         .firestore()
         .collection("projects")
         .doc(id)
         .delete()
-        .then(()=>{
+        .then(() => {
             firebaseApp
-            .firestore()
-            .collection("projects")
-            .doc(id)
-            .collection(id)
-            .doc("splits")
-            .delete()
+                .firestore()
+                .collection("projects")
+                .doc(id)
+                .collection("splits")
+                .get()
+                .then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        firebaseApp
+                            .firestore()
+                            .collection("projects")
+                            .doc(id)
+                            .collection("splits")
+                            .doc(doc.id)
+                            .delete()
+                    });
+                })
         })
 }
 export default deleteProject

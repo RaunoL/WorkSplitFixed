@@ -7,6 +7,7 @@ import MainContainer from "../components/elements/Main"
 import Container from "../components/elements/Container"
 import Background from "../components/elements/Background"
 function Login(props) {
+    
     const [currentFrom, setCurrentForm] = useState(null)
     const toggleLogin = () => {
         setCurrentForm(LoginForm)
